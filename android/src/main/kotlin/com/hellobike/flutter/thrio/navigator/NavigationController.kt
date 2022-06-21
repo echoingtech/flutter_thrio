@@ -393,7 +393,7 @@ internal object NavigationController : Application.ActivityLifecycleCallbacks {
                 poppedToHolder?.activity?.get()?.let {
                     poppedToHolder = null
                     if (it is ThrioActivity) {
-                        it.onResume()
+                        it.callOnResume()
                     }
                 }
                 return

@@ -77,13 +77,16 @@ open class ThrioActivity : ThrioFlutterActivity() {
 
     override fun onBackPressed() = ThrioNavigator.pop()
 
+    fun callOnResume() {
+        super.onResume()
+    }
+
     // 重写这个方法，拦截是否隐藏到后台
     open fun shouldMoveToBack(): Boolean = true
 
     fun onPush(arguments: Map<String, Any?>?, result: BooleanCallback) {
         val id = cachedEngineId ?: throw IllegalStateException("cachedEngineId must not be null")
-        val engine = FlutterEngineFactory.getEngine(id)
-            ?: throw IllegalStateException("engine must not be null")
+        val engine = FlutterEngineFactory.getEngine(id) ?: throw IllegalStateException("engine must not be null")
         engine.sendChannel.onPush(arguments, result)
     }
 
