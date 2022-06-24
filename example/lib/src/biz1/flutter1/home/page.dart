@@ -1,7 +1,7 @@
 import 'dart:io' show Platform;
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:thrio/thrio.dart';
 
 import '../../../models/people.dart';
@@ -48,7 +48,6 @@ class _PageState extends State<Page> {
                       ? const Size.fromHeight(44)
                       : const Size.fromHeight(56),
                   child: AppBar(
-                    brightness: Brightness.light,
                     backgroundColor: Colors.blue,
                     title: const Text('thrio_example',
                         style: TextStyle(color: Colors.black)),
@@ -58,6 +57,7 @@ class _PageState extends State<Page> {
                       icon: Icon(Icons.arrow_back_ios),
                       onPressed: ThrioNavigator.pop,
                     )),
+                    systemOverlayStyle: SystemUiOverlayStyle.dark,
                   )),
               body: SingleChildScrollView(
                 child: Container(

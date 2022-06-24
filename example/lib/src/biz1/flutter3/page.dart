@@ -40,7 +40,6 @@ class _PageState extends State<Page> {
           },
           child: Scaffold(
               appBar: AppBar(
-                brightness: Brightness.light,
                 backgroundColor: Colors.white,
                 title: const Text('thrio_example',
                     style: TextStyle(color: Colors.black)),
@@ -50,6 +49,7 @@ class _PageState extends State<Page> {
                   icon: Icon(Icons.arrow_back_ios),
                   onPressed: ThrioNavigator.pop,
                 )),
+                systemOverlayStyle: SystemUiOverlayStyle.dark,
               ),
               body: SingleChildScrollView(
                 child: Container(
